@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "210086731267",
+    "firebase_url": "https://monitoramento-sensor.firebaseio.com",
+    "project_id": "monitoramento-sensor",
+    "storage_bucket": "monitoramento-sensor.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210086731267:android:b04a6429559121c7357836",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "210086731267-uqkkcb6ehl764hlhou4d64g1ju6bn28h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.myapplication",
+            "certificate_hash": "123d05d01e0eaaf24643c5ca7ef54985fe1b6612"
+          }
+        },
+        {
+          "client_id": "210086731267-fka1v38oci0i4v02pra88keg98sb2npf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2dt45b3QBIYcYUQ7nOaoUVei0ky5WG6Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "210086731267-fka1v38oci0i4v02pra88keg98sb2npf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

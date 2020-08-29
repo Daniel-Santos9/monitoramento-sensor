@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".model.Create_sensor">
+
+    <TextView
+        android:id="@+id/texto_cadastro_sensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastro de sensor"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <EditText
+        android:id="@+id/nome_sensor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nome:"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/saida_sensor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Tipo de Saída:"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/alcance_sensor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Alcance:" />
+
+    <EditText
+        android:id="@+id/velocidade_sensor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Velocidade de resposta:" />
+
+    <EditText
+        android:id="@+id/unidade_sensor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Unidade Medida:" />
+
+    <EditText
+        android:id="@+id/localizacao_sensor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Localização:"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="349dp" />
+
+    <EditText
+        android:id="@+id/status_sensor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Status (On/Off):" />
+
+    <Button
+        android:id="@+id/btn_sensor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar" />
+
+</LinearLayout>

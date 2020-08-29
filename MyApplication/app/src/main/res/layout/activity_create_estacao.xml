@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:orientation="vertical"
+    tools:context=".model.Create_estacao">
+
+    <TextView
+        android:id="@+id/texto_cadastro_estacao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cadastro de Estação"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <EditText
+        android:id="@+id/nome_estacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Nome:"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/descricao_estacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Descrição:"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/proprietario_estacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Proprietário:" />
+
+    <EditText
+        android:id="@+id/localizacao_estacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Localização (lat/log):" />
+
+
+    <Button
+        android:id="@+id/btncad_estacao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cadastrar" />
+</LinearLayout>
