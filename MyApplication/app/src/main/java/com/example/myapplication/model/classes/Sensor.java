@@ -2,6 +2,7 @@ package com.example.myapplication.model.classes;
 
 public class Sensor {
     private String nome;
+    private String medida;
     private String tipo_saida;
     private String range;
     private String velocidade_resposta;
@@ -11,8 +12,9 @@ public class Sensor {
 
 
     public Sensor(){}
-    public Sensor( String nome, String tipo_saida, String range, String velocidade_resposta, String unidade_medida, String localizacao, String status) {
+    public Sensor( String nome, String medida, String tipo_saida, String range, String velocidade_resposta, String unidade_medida, String localizacao, String status) {
         this.nome = nome;
+        this.medida = medida;
         this.tipo_saida = tipo_saida;
         this.range = range;
         this.velocidade_resposta = velocidade_resposta;
@@ -21,6 +23,13 @@ public class Sensor {
         this.status = status;
     }
 
+    public String getMedida() {
+        return medida;
+    }
+
+    public void setMedida(String medida) {
+        this.medida = medida;
+    }
 
     public String getNome() {
         return nome;
@@ -80,6 +89,22 @@ public class Sensor {
 
     @Override
     public String toString() {
-        return nome;
+        return dados();
+    }
+
+    public String dados(){
+
+       String dados =  "Nome: "+nome + "\n"+
+               "Medida: " + medida + "\n"+
+               "Tipo de Saída: " + tipo_saida + "\n"+
+               "Alcance: " + range + "\n"+
+               "Velocidade de resposta: " +  velocidade_resposta + "\n"+
+               "Unidade de medida: " +  unidade_medida + "\n" +
+               "Localização: " + localizacao +  "\n"+
+               "Status: "+ status.toUpperCase() + "\n";
+
+       return  dados;
+
     }
 }
+

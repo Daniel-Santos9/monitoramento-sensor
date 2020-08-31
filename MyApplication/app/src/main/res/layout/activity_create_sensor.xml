@@ -11,9 +11,10 @@
         android:id="@+id/texto_cadastro_sensor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastro de sensor"
         android:layout_gravity="center_horizontal"
-        />
+        android:text="Cadastro de sensor"
+        android:textSize="50px"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/nome_sensor"
@@ -21,6 +22,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Nome:"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/medida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Medida: (exemplo em celsius: 25)"
         android:inputType="textPersonName" />
 
     <EditText

@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Button CadastrarUser = findViewById(R.id.cad_usuario);
         Button CadastrarSensor = findViewById(R.id.cad_sensor);
         Button CadastrarEstacao = findViewById(R.id.cad_estacao);
+        Button listarSensor = findViewById(R.id.listarSensor);
 
         CadastrarUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent it = new Intent(MainActivity.this, Create_estacao.class);
+                startActivity(it);
+            }
+        });
+        listarSensor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it = new Intent(MainActivity.this, List_sensor.class);
                 startActivity(it);
             }
         });

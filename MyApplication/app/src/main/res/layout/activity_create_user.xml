@@ -11,8 +11,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cadastro de Usuários"
         android:layout_gravity="center_horizontal"
+        android:text="Cadastro de Usuários"
+        android:textSize="50px"
+        android:textStyle="bold"
         tools:layout_editor_absoluteY="8dp" />
 
     <EditText

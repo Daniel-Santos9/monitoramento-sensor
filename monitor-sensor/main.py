@@ -15,8 +15,8 @@ while True:
     t = str(temp)
     l = str(lum)
 
-    json_data = {'nome': 'sensor_temperatura', 'saida': 'digital', 'range': 10, 'resposta': 1, 'unidade_medida': 'segundos', 'local':'100,632', 'status': 'ON', 'temperatura': t}
-    json_data2 = {'nome': 'sensor_luminosidade', 'saida': 'digital', 'range': 10, 'resposta': 1, 'unidade_medida': 'segundos', 'local':'100,632', 'status': 'ON', 'luminosidade': l}
+    json_data = {'nome': 'sensor de temperatura', 'tipo_saida': 'digital', 'range': "10", 'velocidade_resposta': "1", 'unidade_medida': 'Celsius', 'localizacao':'100,632', 'status': 'ON', 'medida': t}
+    json_data2 = {'nome': 'sensor_luminosidade', 'saida_saida': 'digital', 'range': "10", 'velocidade_resposta': "1", 'unidade_medida': 'Lumis', 'localizacao':'100,632', 'status': 'ON', 'medida': l}
 
 
     json_data = json.dumps(json_data, indent=8, sort_keys=True)
@@ -29,6 +29,7 @@ while True:
 
     if sensor_temp == 0:
         firebase = firebase.FirebaseApplication("https://monitoramento-sensor.firebaseio.com", authentication=None)
+        #res = firebase.get("/sensor", None)
         res = firebase.post('/sensor', parsed_json)
         res2 = firebase.post('/sensor', parsed_json2)
         print(res)
@@ -36,6 +37,7 @@ while True:
     else:
         firebase.put('/sensor', res['name'], parsed_json)
         firebase.put('/sensor', res2['name'], parsed_json2)
+
 
     time.sleep(2)
     sensor_temp +=1

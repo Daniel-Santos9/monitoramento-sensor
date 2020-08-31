@@ -16,7 +16,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Create_sensor extends AppCompatActivity {
-    private EditText nome, tipo_saida, range, velocidade_respota, unidade_medida, localizacao, status;
+    private EditText nome, medida, tipo_saida, range, velocidade_respota, unidade_medida, localizacao, status;
     private Button btn_sensor;
 
     DatabaseReference ref_sensor;
@@ -29,6 +29,7 @@ public class Create_sensor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_sensor);
         nome = (EditText) findViewById(R.id.nome_sensor);
+        medida = (EditText) findViewById(R.id.medida);
         tipo_saida = (EditText) findViewById(R.id.saida_sensor);
         range = (EditText) findViewById(R.id.alcance_sensor);
         velocidade_respota = (EditText) findViewById(R.id.velocidade_sensor);
@@ -47,6 +48,7 @@ public class Create_sensor extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 String nomeVal = nome.getText().toString();
+                String medidaval = medida.getText().toString();
                 String tipo_saidaVal = tipo_saida.getText().toString();
                 String rangeVal =  range.getText().toString();
                 String VelocidadeVal = velocidade_respota.getText().toString();
@@ -54,16 +56,17 @@ public class Create_sensor extends AppCompatActivity {
                 String locVal = localizacao.getText().toString();
                 String statusval = status.getText().toString();
 
-                cad_sensor(nomeVal, tipo_saidaVal, rangeVal, VelocidadeVal, uniMedVal, locVal, statusval);
+                cad_sensor(nomeVal, medidaval, tipo_saidaVal, rangeVal, VelocidadeVal, uniMedVal, locVal, statusval);
             }
         });
 
     }
 
-    public void cad_sensor(String nome, String tipo_saida, String range, String Velocidade, String unidade_medida, String local, String status){
+    public void cad_sensor(String nome, String medida, String tipo_saida, String range, String Velocidade, String unidade_medida, String local, String status){
 
         String key = ref_sensor.child("sensor").push().getKey();
         sensor.setNome(nome);
+        sensor.setMedida(medida);
         sensor.setTipo_saida(tipo_saida);
         sensor.setRange(range);
         sensor.setVelocidade_resposta(Velocidade);

@@ -13,14 +13,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Monitoramento de sensores" />
+        android:text="Monitoramento de sensores"
+        android:textSize="50px"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/cad_usuario"
-        android:layout_marginTop="4dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cadastrar usuário" />
+        android:layout_marginTop="4dp"
+        android:text="Cadastrar usuário"
+        android:textColorLink="#882727" />
     <Button
         android:id="@+id/cad_estacao"
         android:layout_marginTop="1dp"
@@ -35,13 +38,11 @@
         android:layout_height="wrap_content"
         android:text="Cadastrar sensores" />
 
-
     <Button
-        android:id="@+id/on_off_sensor"
+        android:id="@+id/listarSensor"
         android:layout_marginTop="1dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Ativar/desativar sensor" />
-
+        android:text="Listar sensor" />
 
 </LinearLayout>
