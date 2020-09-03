@@ -8,35 +8,55 @@ import time
 
 sensor_temp = 0
 sensor_lumi = 0
+temperatura = 0
+luminosidade = 0
+outros = 0
+firebase = firebase.FirebaseApplication("https://monitoramento-sensor.firebaseio.com", authentication=None)
 
-while True:
-    temp = randint(20,37)
-    lum = randint(20,37)
+while 1:
+    temp = randint(20,40)
+    lum = randint(40,60)
+    out = randint(100, 200)
     t = str(temp)
     l = str(lum)
+    o = str(out)
+    temperatura = 0
+    outros = 0
+    luminosidade =0
 
-    json_data = {'nome': 'sensor de temperatura', 'tipo_saida': 'digital', 'range': "10", 'velocidade_resposta': "1", 'unidade_medida': 'Celsius', 'localizacao':'100,632', 'status': 'ON', 'medida': t}
-    json_data2 = {'nome': 'sensor_luminosidade', 'saida_saida': 'digital', 'range': "10", 'velocidade_resposta': "1", 'unidade_medida': 'Lumis', 'localizacao':'100,632', 'status': 'ON', 'medida': l}
+    res = firebase.get("/sensor", None)
+    for i in res:
+        #print("aaaa")
+        for j in res.values():
+            nomea = j["nome"]
 
-
-    json_data = json.dumps(json_data, indent=8, sort_keys=True)
-    json_data2 = json.dumps(json_data2, indent=8,sort_keys=True)
-
-    parsed_json = (json.loads(json_data))
-    parsed_json2 = (json.loads(json_data2))
-
-    print(json_data)
-
-    if sensor_temp == 0:
-        firebase = firebase.FirebaseApplication("https://monitoramento-sensor.firebaseio.com", authentication=None)
-        #res = firebase.get("/sensor", None)
-        res = firebase.post('/sensor', parsed_json)
-        res2 = firebase.post('/sensor', parsed_json2)
-        print(res)
-        print(res2)
-    else:
-        firebase.put('/sensor', res['name'], parsed_json)
-        firebase.put('/sensor', res2['name'], parsed_json2)
+            if(nomea.upper() == 'TEMPERATURA' or nomea.upper() == 'SENSOR DE TEMPERATURA'):
+                #print(nomea.upper())
+                if(temperatura == 0):
+                    #print("aaaa")
+                    local = '/sensor/'+str(i)
+                    #print(local)
+                    firebase.put(local, 'medida', t)
+                    temperatura += 1
+                    break
+            elif(nomea.upper() == 'LUMINOSIDADE' or nomea.upper() == 'SENSOR DE LUMINOSIDADE'):
+                #print(nomea.upper())
+                if(luminosidade == 0):
+                    #print("bbbb")
+                    local = '/sensor/'+str(i)
+                    #print(local)
+                    firebase.put(local, 'medida', l)
+                    luminosidade += 1
+                    break
+            else:
+                if(outros == 0):
+                    #print(nomea.upper())
+                    #print("zzzzzzzzzzzzzzzzzzzzzzzzzzzz")
+                    local = '/sensor/'+str(i)
+                    #print(local)
+                    firebase.put(local, 'medida', o)
+                    outros += 1
+                    break
 
 
     time.sleep(2)
